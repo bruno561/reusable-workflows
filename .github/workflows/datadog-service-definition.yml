@@ -42,7 +42,7 @@ jobs:
           repos: |
             - name: ${{ inputs.reposName }
               url: ${{ inputs.reposURL }
-              provider:${{ inputs.reposProvider }
+              provider: ${{ inputs.reposProvider }
           docs: |
             - name: outage-runbook
               url: https://fake-org.github.io/hello-world-outage-runbook
