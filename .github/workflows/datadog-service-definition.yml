@@ -1,0 +1,39 @@
+name: Reusable Datadog Service Definition
+on: 
+  workflow_call:
+    inputs:
+      serviceName:
+        required: true
+        type: string
+        default: test
+jobs:
+  datadog-service-deinition:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+        with:
+          repository: bruno561/opentelemetry-demo
+          ref: 'dev'
+      - name: Service Definition
+        uses: arcxp/datadog-service-catalog-metadata-provider@v1.0.4
+        with:
+          datadog-hostname: api.us5.datadoghq.com
+          datadog-key: ${{ secrets.DATADOG_API_KEY }}
+          datadog-app-key: ${{ secrets.DATADOG_APPLICATION_KEY }}
+          service-name: ${{ inputs.serviceName }}
+          team: squad
+          email: global.greetings@fake-email-host.com
+          slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'
+          repos: |
+            - name: hello-world
+              url: https://github.com/fake-org/hello-world
+              provider: github
+          docs: |
+            - name: outage-runbook
+              url: https://fake-org.github.io/hello-world-outage-runbook
+              provider: github
+          integrations: |
+            opsgenie:
+              service_url: https://fake-org.hello-world.opsgenie.com
+              region: US
