@@ -6,10 +6,10 @@ on:
         required: true
         type: string
         default: test
-      email:
+      emailName:
         required: true
         type: string
-        default: test
+        default: test1
 jobs:
   datadog-service-deinition:
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
           datadog-app-key: ${{ secrets.DATADOG_APPLICATION_KEY }}
           service-name: ${{ inputs.serviceName }}
           team: squad
-          email: ${{ inputs.email }}
+          email: ${{ inputs.emailName }}
           slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'
           repos: |
             - name: hello-world
