@@ -14,12 +14,12 @@ on:
       reposName:
         required: true
         type: string
-      reposURL:
-        required: true
-        type: string
-      reposProvider:
-        required: true
-        type: string
+      # reposURL:
+      #   required: true
+      #   type: string
+      # reposProvider:
+      #   required: true
+      #   type: string
 jobs:
   datadog-service-deinition:
     runs-on: ubuntu-latest
