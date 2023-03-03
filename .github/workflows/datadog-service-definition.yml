@@ -5,11 +5,15 @@ on:
       serviceName:
         required: true
         type: string
-        default: test
       emailName:
         required: true
         type: string
-        default: test1
+      slackChannelName:
+        required: true
+        type: string
+      reposName:
+        required: true
+        type: string
 jobs:
   datadog-service-deinition:
     runs-on: ubuntu-latest
@@ -28,11 +32,8 @@ jobs:
           service-name: ${{ inputs.serviceName }}
           team: squad
           email: ${{ inputs.emailName }}
-          slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'
-          repos: |
-            - name: hello-world
-              url: https://github.com/fake-org/hello-world
-              provider: github
+          slack-support-channel: ${{ inputs.slackChannelName }}
+          repos: ${{ inputs.reposName }}
           docs: |
             - name: outage-runbook
               url: https://fake-org.github.io/hello-world-outage-runbook
