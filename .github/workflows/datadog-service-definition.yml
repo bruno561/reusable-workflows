@@ -26,6 +26,9 @@ on:
       reposProvider:
         required: true
         type: string
+      reposMatrix:
+        required: true
+        type: string
 jobs:
   datadog-service-deinition:
     runs-on: ubuntu-latest
@@ -57,8 +60,5 @@ jobs:
             - name: name
               url: http://google.com
               type: doc
-          repos: |
-            - name: ${{ inputs.reposName }}
-              url: ${{ inputs.reposURL }}
-              provider: ${{ inputs.reposProvider }}
+          repos: ${{ inputs.reposMatrix }}
           tags: ${{ inputs.tagsName }}
