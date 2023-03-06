@@ -60,5 +60,8 @@ jobs:
             - name: name1
               url: http://google.com
               type: doc1
-          repos: ${{ inputs.reposMatrix }}
+          repos: |
+            - name: ${{ inputs.reposName }}
+              url: ${{ inputs.reposURL }}
+              provider: ${{ inputs.reposProvider }}
           tags: ${{ inputs.tagsName }}
