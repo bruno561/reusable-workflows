@@ -17,15 +17,15 @@ on:
       tagsName:
         required: true
         type: string
-      reposName:
-        required: true
-        type: string
-      reposURL:
-        required: true
-        type: string
-      reposProvider:
-        required: true
-        type: string
+      # reposName:
+      #   required: true
+      #   type: string
+      # reposURL:
+      #   required: true
+      #   type: string
+      # reposProvider:
+      #   required: true
+      #   type: string
       reposMatrix:
         required: true
         type: string
