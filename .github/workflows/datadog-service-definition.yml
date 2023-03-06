@@ -57,8 +57,11 @@ jobs:
               url: http://google.com
               provider: GitHub
           links: |
-            - name: name
+            - name: name1
               url: http://google.com
-              type: doc
+              type: doc1
+            - name: name2
+              url: http://google.com
+              type: doc2
           repos: ${{ inputs.reposMatrix }}
           tags: ${{ inputs.tagsName }}
