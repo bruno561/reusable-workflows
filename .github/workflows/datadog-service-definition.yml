@@ -17,12 +17,15 @@ on:
       tagsName:
         required: true
         type: string
-      # reposURL:
-      #   required: true
-      #   type: string
-      # reposProvider:
-      #   required: true
-      #   type: string
+      reposName:
+        required: true
+        type: string
+      reposURL:
+        required: true
+        type: string
+      reposProvider:
+        required: true
+        type: string
 jobs:
   datadog-service-deinition:
     runs-on: ubuntu-latest
@@ -55,7 +58,7 @@ jobs:
               url: http://google.com
               type: doc
           repos: |
-            - name: name
-              url: http://google.com
-              provider: GitHub
+            - name: ${{ inputs.reposName }}
+              url: ${{ inputs.reposURL }}
+              provider: ${{ inputs.reposProvider }}
           tags: ${{ inputs.tagsName }}
