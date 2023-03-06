@@ -14,9 +14,9 @@ on:
       slackChannelName:
         required: true
         type: string
-      tagsName:
-        required: true
-        type: string
+      # tagsName:
+      #   required: true
+      #   type: string
       reposName:
         required: true
         type: string
@@ -60,14 +60,8 @@ jobs:
             - name: name1
               url: http://google.com
               type: doc1
-            - name: name2
-              url: http://google.com
-              type: doc2
           repos: |
             - name: ${{ inputs.reposName }}
               url: ${{ inputs.reposURL }}
               provider: ${{ inputs.reposProvider }}
-            - name: ${{ inputs.reposName }}
-              url: ${{ inputs.reposURL }}
-              provider: ${{ inputs.reposProvider }}
-          tags: ${{ inputs.tagsName }}
+          # tags: ${{ inputs.tagsName }}
