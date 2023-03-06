@@ -8,10 +8,10 @@ on:
       emailName:
         required: true
         type: string
-      slackChannelName:
+      squadName:
         required: true
         type: string
-      reposName:
+      slackChannelName:
         required: true
         type: string
       # reposURL:
@@ -36,15 +36,22 @@ jobs:
           datadog-key: ${{ secrets.DATADOG_API_KEY }}
           datadog-app-key: ${{ secrets.DATADOG_APPLICATION_KEY }}
           service-name: ${{ inputs.serviceName }}
-          team: squad
+          team: ${{ inputs.squadName }}
           email: ${{ inputs.emailName }}
           slack-support-channel: ${{ inputs.slackChannelName }}
-          repos: ${{ inputs.reposName }}
+          contacts: |
+            - name: value
+              type: value
+              value: value
           docs: |
-            - name: outage-runbook
-              url: https://fake-org.github.io/hello-world-outage-runbook
-              provider: github
-          integrations: |
-            opsgenie:
-              service_url: https://fake-org.hello-world.opsgenie.com
-              region: US
+            - name: value
+              url: value
+              provider: value
+          link: |
+            - name: value
+              url: value
+              type: value
+          repos: |
+            - name: value
+              url: value
+              provider: value
