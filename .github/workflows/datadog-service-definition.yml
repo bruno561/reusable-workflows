@@ -40,18 +40,18 @@ jobs:
           email: ${{ inputs.emailName }}
           slack-support-channel: ${{ inputs.slackChannelName }}
           contacts: |
-            - name: value
-              type: value
-              value: value
+            - name: name
+              type: email
+              value: test@gmail.com
           docs: |
-            - name: value
-              url: value
-              provider: value
-          link: |
-            - name: value
-              url: value
-              type: value
+            - name: name
+              url: http://google.com
+              provider: GitHub
+          links: |
+            - name: name
+              url: http://google.com
+              type: doc
           repos: |
-            - name: value
-              url: value
-              provider: value
+            - name: name
+              url: http://google.com
+              provider: GitHub
