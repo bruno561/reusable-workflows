@@ -60,8 +60,5 @@ jobs:
             - name: name1
               url: http://google.com
               type: doc1
-            - name: name2
-              url: http://google.com
-              type: doc2
           repos: ${{ inputs.reposMatrix }}
           tags: ${{ inputs.tagsName }}
