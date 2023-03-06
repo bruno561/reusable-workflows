@@ -14,6 +14,9 @@ on:
       slackChannelName:
         required: true
         type: string
+      tagsName:
+        required: true
+        type: string
       # reposURL:
       #   required: true
       #   type: string
@@ -55,3 +58,4 @@ jobs:
             - name: name
               url: http://google.com
               provider: GitHub
+          tags: ${{ inputs.tagsName }}
