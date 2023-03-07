@@ -29,6 +29,33 @@ on:
       # reposMatrix:
       #   required: true
       #   type: string
+      contactName:
+        required: true
+        type: string
+      contactType:
+        required: true
+        type: string
+      contactValue:
+        required: true
+        type: string
+      docName:
+        required: true
+        type: string
+      docUrl:
+        required: true
+        type: string
+      docProvider:
+        required: true
+        type: string
+      linkName:
+        required: true
+        type: string
+      linkUrl:
+        required: true
+        type: string
+      linkType:
+        required: true
+        type: string
 jobs:
   datadog-service-deinition:
     runs-on: ubuntu-latest
@@ -49,17 +76,17 @@ jobs:
           email: ${{ inputs.emailName }}
           slack-support-channel: ${{ inputs.slackChannelName }}
           contacts: |
-            - name: name
-              type: email
-              value: test@gmail.com
+            - name: ${{ inputs.contactName }}
+              type: ${{ inputs.contactType }}
+              value: ${{ inputs.contactValue }}
           docs: |
-            - name: name
-              url: http://google.com
-              provider: GitHub
+            - name: ${{ inputs.docName }}
+              url: ${{ inputs.docUrl }}
+              provider: ${{ inputs.docProvider }}
           links: |
-            - name: name1
-              url: http://google.com
-              type: doc1
+            - name: ${{ inputs.linkName }}   
+              url: ${{ inputs.linkUrl }}
+              type: ${{ inputs.linkType }}
           repos: |
             - name: ${{ inputs.reposName }}
               url: ${{ inputs.reposURL }}
