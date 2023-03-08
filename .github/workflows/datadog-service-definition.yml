@@ -94,4 +94,6 @@ jobs:
             - name: ${{ inputs.reposName }}
               url: ${{ inputs.reposURL }}
               provider: ${{ inputs.reposProvider }}
-          tags: "${{ inputs.tagsKey }}:${{ inputs.tagsKey2 }}"
+          tags: 
+              ${{ inputs.tagsKey }} 
+              ${{ inputs.tagsKey2 }}
