@@ -14,7 +14,10 @@ on:
       slackChannelName:
         required: true
         type: string
-      tagsName:
+      tagsKey:
+        required: true
+        type: string
+      tagsKey2:
         required: true
         type: string
       reposName:
@@ -91,4 +94,4 @@ jobs:
             - name: ${{ inputs.reposName }}
               url: ${{ inputs.reposURL }}
               provider: ${{ inputs.reposProvider }}
-          tags: ${{ inputs.tagsName }}
+          tags: "${{ inputs.tagsKey }}:${{ inputs.tagKey2 }}"
