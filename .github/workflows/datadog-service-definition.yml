@@ -23,7 +23,6 @@ on:
       reposName:
         required: true
         type: string
-        default: "${{ github.repository }}"
       reposURL:
         required: true
         type: string
