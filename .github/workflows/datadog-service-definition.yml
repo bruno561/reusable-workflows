@@ -30,10 +30,10 @@ on:
         required: false
         type: string
         default: "repository.name"
-      reposURL:
-        required: false
-        type: string
-        default: "repository.url"
+      # reposURL:
+      #   required: false
+      #   type: string
+      #   default: "repository.url"
       # reposProvider:
       #   required: false
       #   type: string
