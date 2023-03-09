@@ -11,9 +11,9 @@ on:
         type: string
         default: "squad"
       emailName:
-        required: true
+        required: false
         type: string
-        default: "e-mail"
+        default: "devops@gmail.com"
       slackChannelName:
         required: false
         type: string
