@@ -110,7 +110,7 @@ jobs:
               type: Dashboard
           repos: |
             - name: ${{ inputs.reposName }}
-              url: ${{ github.repositoryUrl }}
+              url: ${{ github.server_url }}
               provider: GitHub
           tags: |
               - ${{ inputs.tagName1 }}
