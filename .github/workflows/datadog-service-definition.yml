@@ -112,5 +112,5 @@ jobs:
             - name: ${{ github.event.repository.name }}
               url: ${{ github.server_url }}/${{ github.repository }}
               provider: GitHub
-          tags:
-            ${{ inputs.tagName1 }}
+          tags: |
+            - ${{ inputs.tagName1 }}
