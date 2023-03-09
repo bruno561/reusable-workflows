@@ -3,17 +3,17 @@ on:
   workflow_call:
     inputs:
       serviceName:
-        required: false
+        required: true
         type: string
         default: "service"
-      emailName:
-        required: false
-        type: string
-        default: "e-mail"
       squadName:
-        required: false
+        required: true
         type: string
         default: "squad"
+      emailName:
+        required: true
+        type: string
+        default: "e-mail"
       slackChannelName:
         required: false
         type: string
@@ -22,14 +22,22 @@ on:
         required: false
         type: string
         default: "key:value"
-      tagName2:
+      # tagName2:
+      #   required: false
+      #   type: string
+      #   default: "key:value"
+      docUrl:
         required: false
         type: string
-        default: "key:value"
-      reposName:
+        default: "doc.url"
+      linkUrl:
         required: false
         type: string
-        default: "repository.name"
+        default: "link.url"
+      # reposName:
+      #   required: false
+      #   type: string
+      #   default: "repository.name"
       # reposURL:
       #   required: false
       #   type: string
@@ -57,10 +65,6 @@ on:
       #   required: false
       #   type: string
       #   default: "doc.name"
-      docUrl:
-        required: false
-        type: string
-        default: "doc.url"
       # docProvider:
       #   required: false
       #   type: string
@@ -69,10 +73,6 @@ on:
       #   required: false
       #   type: string
       #   default: "link.name"
-      linkUrl:
-        required: false
-        type: string
-        default: "link.url"
       # linkType:
       #   required: false
       #   type: string
@@ -112,6 +112,5 @@ jobs:
             - name: ${{ github.event.repository.name }}
               url: ${{ github.server_url }}/${{ github.repository }}
               provider: GitHub
-          tags: |
-              - ${{ inputs.tagName1 }}
-              - ${{ inputs.tagName2 }}
+          tags:
+            ${{ inputs.tagName1 }}
