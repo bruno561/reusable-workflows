@@ -111,7 +111,7 @@ jobs:
           repos: |
             - name: ${{ inputs.reposName }}
               url: ${{ inputs.reposURL }}
-              provider: github
+              provider: ${{ inputs.reposProvider }}
           tags: |
               - ${{ inputs.tagName1 }}
               - ${{ inputs.tagName2 }}
