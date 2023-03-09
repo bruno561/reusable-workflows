@@ -22,10 +22,6 @@ on:
         required: true
         type: string
         default: "key:value"
-      # tagName2:
-      #   required: false
-      #   type: string
-      #   default: "key:value"
       docUrl:
         required: false
         type: string
@@ -34,49 +30,6 @@ on:
         required: false
         type: string
         default: "link.url"
-      # reposName:
-      #   required: false
-      #   type: string
-      #   default: "repository.name"
-      # reposURL:
-      #   required: false
-      #   type: string
-      #   default: "repository.url"
-      # reposProvider:
-      #   required: false
-      #   type: string
-      #   default: "repository.provider"
-      # reposMatrix:
-      #   required: false
-      #   type: string
-      # contactName:
-      #   required: false
-      #   type: string
-      #   default: "contact.name"
-      # contactType:
-      #   required: false
-      #   type: string
-      #   default: "contact.type"
-      # contactValue:
-      #   required: false
-      #   type: string
-      #   default: "contact.value"
-      # docName:
-      #   required: false
-      #   type: string
-      #   default: "doc.name"
-      # docProvider:
-      #   required: false
-      #   type: string
-      #   default: "doc.provider"
-      # linkName:
-      #   required: false
-      #   type: string
-      #   default: "link.name"
-      # linkType:
-      #   required: false
-      #   type: string
-      #   default: "link.type"
 jobs:
   datadog-service-deinition:
     runs-on: ubuntu-latest
