@@ -11,6 +11,7 @@ on:
       squadName:
         required: true
         type: string
+        default: "squad-name"
       slackChannelName:
         required: true
         type: string
