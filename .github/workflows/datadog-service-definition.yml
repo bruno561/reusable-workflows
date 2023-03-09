@@ -5,61 +5,78 @@ on:
       serviceName:
         required: true
         type: string
+        default: "service"
       emailName:
         required: true
         type: string
+        default: "e-mail"
       squadName:
         required: true
         type: string
-        default: "squad-name"
+        default: "squad"
       slackChannelName:
         required: true
         type: string
+        default: "slack"
       tagName1:
         required: true
         type: string
+        default: "key:value"
       tagName2:
         required: true
         type: string
+        default: "key:value"
       reposName:
         required: true
         type: string
+        default: "repository.name"
       reposURL:
         required: true
         type: string
+        default: "repository.url"
       reposProvider:
         required: true
         type: string
+        default: "repository.provider"
       # reposMatrix:
       #   required: true
       #   type: string
       contactName:
         required: true
         type: string
+        default: "contact.name"
       contactType:
         required: true
         type: string
+        default: "contact.type"
       contactValue:
         required: true
         type: string
+        default: "contact.value"
       docName:
         required: true
         type: string
+        default: "doc.name"
       docUrl:
         required: true
         type: string
+        default: "doc.url"
       docProvider:
         required: true
         type: string
+        default: "doc.provider"
       linkName:
         required: true
         type: string
+        default: "link.name"
       linkUrl:
         required: true
         type: string
+        default: "link.url"
       linkType:
         required: true
         type: string
+        default: "link.type"
 jobs:
   datadog-service-deinition:
     runs-on: ubuntu-latest
@@ -94,7 +111,7 @@ jobs:
           repos: |
             - name: ${{ inputs.reposName }}
               url: ${{ inputs.reposURL }}
-              provider: ${{ inputs.reposProvider }}
+              provider: github
           tags: |
               - ${{ inputs.tagName1 }}
               - ${{ inputs.tagName2 }}
