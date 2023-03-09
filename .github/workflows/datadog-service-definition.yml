@@ -34,49 +34,49 @@ on:
         required: false
         type: string
         default: "repository.url"
-      reposProvider:
-        required: false
-        type: string
-        default: "repository.provider"
+      # reposProvider:
+      #   required: false
+      #   type: string
+      #   default: "repository.provider"
       # reposMatrix:
       #   required: false
       #   type: string
-      contactName:
-        required: false
-        type: string
-        default: "contact.name"
-      contactType:
-        required: false
-        type: string
-        default: "contact.type"
-      contactValue:
-        required: false
-        type: string
-        default: "contact.value"
-      docName:
-        required: false
-        type: string
-        default: "doc.name"
+      # contactName:
+      #   required: false
+      #   type: string
+      #   default: "contact.name"
+      # contactType:
+      #   required: false
+      #   type: string
+      #   default: "contact.type"
+      # contactValue:
+      #   required: false
+      #   type: string
+      #   default: "contact.value"
+      # docName:
+      #   required: false
+      #   type: string
+      #   default: "doc.name"
       docUrl:
         required: false
         type: string
         default: "doc.url"
-      docProvider:
-        required: false
-        type: string
-        default: "doc.provider"
-      linkName:
-        required: false
-        type: string
-        default: "link.name"
+      # docProvider:
+      #   required: false
+      #   type: string
+      #   default: "doc.provider"
+      # linkName:
+      #   required: false
+      #   type: string
+      #   default: "link.name"
       linkUrl:
         required: false
         type: string
         default: "link.url"
-      linkType:
-        required: false
-        type: string
-        default: "link.type"
+      # linkType:
+      #   required: false
+      #   type: string
+      #   default: "link.type"
 jobs:
   datadog-service-deinition:
     runs-on: ubuntu-latest
@@ -96,22 +96,22 @@ jobs:
           team: ${{ inputs.squadName }}
           email: ${{ inputs.emailName }}
           slack-support-channel: ${{ inputs.slackChannelName }}
-          contacts: |
-            - name: ${{ inputs.contactName }}
-              type: ${{ inputs.contactType }}
-              value: ${{ inputs.contactValue }}
+          # contacts: |
+          #   - name: ${{ inputs.contactName }}
+          #     type: ${{ inputs.contactType }}
+          #     value: ${{ inputs.contactValue }}
           docs: |
-            - name: ${{ inputs.docName }}
+            - name: Documentation
               url: ${{ inputs.docUrl }}
-              provider: ${{ inputs.docProvider }}
+              provider: Confluence
           links: |
-            - name: ${{ inputs.linkName }}   
+            - name: Grafana
               url: ${{ inputs.linkUrl }}
-              type: ${{ inputs.linkType }}
+              type: Dashboard
           repos: |
             - name: ${{ inputs.reposName }}
               url: ${{ inputs.reposURL }}
-              provider: ${{ inputs.reposProvider }}
+              provider: GitHub
           tags: |
               - ${{ inputs.tagName1 }}
               - ${{ inputs.tagName2 }}
