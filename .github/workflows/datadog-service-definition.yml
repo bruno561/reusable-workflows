@@ -19,7 +19,7 @@ on:
         type: string
         default: "slack"
       tagName1:
-        required: false
+        required: true
         type: string
         default: "key:value"
       # tagName2:
