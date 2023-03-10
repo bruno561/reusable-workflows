@@ -1,0 +1,3 @@
+            - name: ${{ inputs.reposName }}
+              url: ${{ inputs.reposURL }}
+              provider: ${{ inputs.reposProvider }}
