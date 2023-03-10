@@ -22,6 +22,10 @@ on:
         required: true
         type: string
         default: "key:value"
+      tagName2:
+        required: true
+        type: string
+        default: "key:value"
       docUrl:
         required: false
         type: string
@@ -66,4 +70,6 @@ jobs:
               url: ${{ github.server_url }}/${{ github.repository }}
               provider: GitHub
           tags: |
+            - "service-catalog:true"
             - ${{ inputs.tagName1 }}
+            - ${{ inputs.tagName2 }}
