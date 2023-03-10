@@ -3,7 +3,7 @@ on:
   workflow_call:
     inputs:
       serviceName:
-        required: true
+        required: false
         type: string
         default: "servicedefault"
       squadName:
