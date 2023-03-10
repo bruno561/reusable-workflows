@@ -71,5 +71,5 @@ jobs:
               provider: GitHub
           tags: |
             - "service-catalog:true"
-            - ${{ inputs.tagName1 }}
-            - ${{ inputs.tagName2 }}
+            - "${{ inputs.tagName1 }}"
+            - "${{ inputs.tagName2 }}"
