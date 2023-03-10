@@ -3,7 +3,7 @@ on:
   workflow_call:
     inputs:
       serviceName:
-        required: false
+        required: true
         type: string
         default: "servicedefault"
       squadName:
@@ -11,27 +11,27 @@ on:
         type: string
         default: "squad"
       emailName:
-        required: false
+        required: true
         type: string
         default: "devops@gmail.com"
       slackChannelName:
-        required: false
+        required: true
         type: string
         default: "slack"
       tagName1:
-        required: true
+        required: false
         type: string
         default: "key:value"
       tagName2:
-        required: true
+        required: false
         type: string
         default: "key:value"
       docUrl:
-        required: false
+        required: true
         type: string
         default: "doc.url"
       linkUrl:
-        required: false
+        required: true
         type: string
         default: "link.url"
 jobs:
