@@ -5,7 +5,7 @@ on:
       serviceName:
         required: true
         type: string
-        default: "service"
+        default: "servicedefault"
       squadName:
         required: true
         type: string
