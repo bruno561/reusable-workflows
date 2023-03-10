@@ -6,12 +6,10 @@ on:
         description: 'Datadog API Key'
         required: true
         type: string
-        default: ${{ secrets.DATADOG_API_KEY }}
       DD_APPLICATION_KEY:
         description: 'Datadog Application Key'
         required: true
         type: string
-        default: ${{ secrets.DATADOG_APPLICATION_KEY }}
       service_name:
         description: 'The name of the service to delete'
         required: false
@@ -22,7 +20,11 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+
       - name: Delete Service Definition
+        env:
+          DD_API_KEY: ${{ secrets.DD_API_KEY }}
+          DD_APPLICATION_KEY: ${{ secrets.DD_APPLICATION_KEY }}
         run: |
           # Path parameters
           export service_name="${{ inputs.service_name }}"
