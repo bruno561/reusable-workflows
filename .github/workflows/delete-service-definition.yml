@@ -4,12 +4,12 @@ on:
     inputs:
       DD_API_KEY:
         description: 'Datadog API Key'
-        required: true
+        required: false
         type: string
         default: ${{ env.DD_API_KEY }}
       DD_APPLICATION_KEY:
         description: 'Datadog Application Key'
-        required: true
+        required: false
         type: string
         default: ${{ env.DD_APPLICATION_KEY }}
       service_name:
@@ -22,7 +22,6 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-
       - name: Delete Service Definition
         env:
           DD_API_KEY: ${{ secrets.DD_API_KEY }}
