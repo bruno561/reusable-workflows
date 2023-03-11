@@ -6,6 +6,9 @@ on:
         description: 'The name of the service to delete'
         required: false
         type: string
+    secrets:
+      DD-API-KEY: ${{ secrets.DD_API_KEY }}
+      DD-APPLICATION-KEY: ${{ secrets.DD_APPLICATION_KEY }}
 jobs:
   delete:
     runs-on: ubuntu-latest
