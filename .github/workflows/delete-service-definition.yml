@@ -2,16 +2,16 @@ name: Delete Service Definition
 on:
   workflow_call:
     inputs:
-      DD_API_KEY:
-        description: 'Datadog API Key'
-        required: false
-        type: string
-        default: ${{ secrets.DD_API_KEY }}
-      DD_APPLICATION_KEY:
-        description: 'Datadog Application Key'
-        required: false
-        type: string
-        default: ${{ secrets.DD_APPLICATION_KEY }}
+      # DD_API_KEY:
+      #   description: 'Datadog API Key'
+      #   required: false
+      #   type: string
+      #   default: ${{ secrets.DD_API_KEY }}
+      # DD_APPLICATION_KEY:
+      #   description: 'Datadog Application Key'
+      #   required: false
+      #   type: string
+      #   default: ${{ secrets.DD_APPLICATION_KEY }}
       service_name:
         description: 'The name of the service to delete'
         required: false
@@ -23,14 +23,11 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Delete Service Definition
-        # env:
-        #   DD_API_KEY: ${{ secrets.DD_API_KEY }}
-        #   DD_APPLICATION_KEY: ${{ secrets.DD_APPLICATION_KEY }}
         run: |
           # Path parameters
           export service_name="${{ inputs.service_name }}"
           # Curl command
           curl -X DELETE "https://us5.datadoghq.com/api/v2/services/definitions/${{ inputs.service_name }}" \
           -H "Accept: application/json" \
-          -H "DD-API-KEY: ${{ inputs.DD_API_KEY }}" \
-          -H "DD-APPLICATION-KEY: ${{ inputs.DD_APPLICATION_KEY }}"
+          -H "DD-API-KEY: ${{ secrets.DD_API_KEY }}" \
+          -H "DD-APPLICATION-KEY: ${{ secrets.DD_APPLICATION_KEY }}"
