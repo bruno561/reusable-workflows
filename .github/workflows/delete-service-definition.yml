@@ -2,16 +2,6 @@ name: Delete Service Definition
 on:
   workflow_call:
     inputs:
-      # DD_API_KEY:
-      #   description: 'Datadog API Key'
-      #   required: false
-      #   type: string
-      #   default: ${{ secrets.DD_API_KEY }}
-      # DD_APPLICATION_KEY:
-      #   description: 'Datadog Application Key'
-      #   required: false
-      #   type: string
-      #   default: ${{ secrets.DD_APPLICATION_KEY }}
       service_name:
         description: 'The name of the service to delete'
         required: false
