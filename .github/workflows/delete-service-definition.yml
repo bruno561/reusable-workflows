@@ -7,8 +7,10 @@ on:
         required: false
         type: string
     secrets:
-      DD-API-KEY: ${{ secrets.DD_API_KEY }}
-      DD-APPLICATION-KEY: ${{ secrets.DD_APPLICATION_KEY }}
+      DD-API-KEY:
+        required: true
+      DD-APPLICATION-KEY: 
+        required: true
 jobs:
   delete:
     runs-on: ubuntu-latest
