@@ -13,6 +13,9 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Delete Service Definition
+        env:
+          DD_API_KEY: ${{ secrets.DD_API_KEY }}
+          DD_APPLICATION_KEY: ${{ secrets.DD_APPLICATION_KEY }}
         run: |
           # Path parameters
           export service_name="${{ inputs.service_name }}"
