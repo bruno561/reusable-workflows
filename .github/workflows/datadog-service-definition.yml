@@ -45,8 +45,8 @@ jobs:
         uses: arcxp/datadog-service-catalog-metadata-provider@v1.0.4
         with:
           datadog-hostname: api.us5.datadoghq.com
-          datadog-key: ${{ secrets.DATADOG_API_KEY }}
-          datadog-app-key: ${{ secrets.DATADOG_APPLICATION_KEY }}
+          datadog-key: ${{ secrets.DD_API_KEY }}
+          datadog-app-key: ${{ secrets.DD_APPLICATION_KEY }}
           service-name: ${{ inputs.serviceName }}
           team: ${{ inputs.squadName }}
           email: ${{ inputs.emailName }}
