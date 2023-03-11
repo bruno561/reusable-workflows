@@ -12,10 +12,10 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: Use a repo or org secret from the calling workflow.
-        run: echo ${{ secrets.DD_API_KEY }}
-      - name: Use a repo or org secret from the calling workflow.
-        run: echo ${{ secrets.DD_APPLICATION_KEY }}
+      # - name: Use a repo or org secret from the calling workflow.
+      #   run: echo ${{ secrets.DD_API_KEY }}
+      # - name: Use a repo or org secret from the calling workflow.
+      #   run: echo ${{ secrets.DD_APPLICATION_KEY }}
       - name: Delete Service Definition
         run: |
           # Path parameters
