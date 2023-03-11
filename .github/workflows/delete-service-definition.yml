@@ -9,11 +9,11 @@ on:
       DD-API-KEY:
         required: false
         type: string
-        default: "${{ secrets.DD_API_KEY }}"
+        default: '${{ secrets.DD_API_KEY }}'
       DD-APPLICATION-KEY: 
         required: false
         type: string
-        default: "${{ secrets.DD_APPLICATION_KEY }}"
+        default: '${{ secrets.DD_APPLICATION_KEY }}'
 jobs:
   delete:
     runs-on: ubuntu-latest
