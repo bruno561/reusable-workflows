@@ -2,7 +2,7 @@ name: Delete Service Definition
 on:
   workflow_call:
     inputs:
-      service_name:
+      serviceName:
         description: 'The name of the service to delete'
         required: false
         type: string
@@ -15,9 +15,9 @@ jobs:
       - name: Delete Service Definition
         run: |
           # Path parameters
-          export service_name="${{ inputs.service_name }}"
+          export serviceName="${{ inputs.serviceName }}"
           # Curl command
-          curl -X DELETE "https://us5.datadoghq.com/api/v2/services/definitions/${{ inputs.service_name }}" \
+          curl -X DELETE "https://us5.datadoghq.com/api/v2/services/definitions/${{ inputs.serviceName }}" \
           -H "Accept: application/json" \
           -H "DD-API-KEY: ${{ secrets.DD_API_KEY }}" \
           -H "DD-APPLICATION-KEY: ${{ secrets.DD_APPLICATION_KEY }}"
