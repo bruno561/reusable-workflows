@@ -15,7 +15,6 @@ jobs:
       - name: Delete Service Definition
         run: |
           # Path parameters
-          export serviceName="${{ inputs.serviceName }}"
           # Curl command
           curl -X DELETE "https://us5.datadoghq.com/api/v2/services/definitions/${{ inputs.serviceName }}" \
           -H "Accept: application/json" \
