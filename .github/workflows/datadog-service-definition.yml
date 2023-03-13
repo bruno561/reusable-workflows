@@ -28,7 +28,7 @@ on:
         required: true
         type: string
         default: "doc.url"
-      grafanakUrl:
+      grafanaUrl:
         required: true
         type: string
         default: "link.url"
@@ -61,7 +61,7 @@ jobs:
               provider: Confluence
           links: |
             - name: Grafana
-              url: ${{ inputs.grafanakUrl }}
+              url: ${{ inputs.grafanaUrl }}
               type: Dashboard
           repos: |
             - name: ${{ github.event.repository.name }}
