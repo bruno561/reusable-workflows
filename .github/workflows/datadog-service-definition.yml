@@ -5,44 +5,36 @@ on:
       serviceName:
         required: true
         type: string
-        default: "servicedefault"
       squadName:
         required: true
         type: string
-        default: "squad"
       emailName:
-        required: true
+        required: false
         type: string
         default: "devops@gmail.com"
       slackChannelName:
         required: true
         type: string
-        default: "slack"
       tagName1:
         required: false
         type: string
-        default: "key:value"
+        default: "key1:value1"
       tagName2:
         required: false
         type: string
-        default: "key:value"
+        default: "key2:value2"
       docUrl:
         required: true
         type: string
-        default: "doc.url"
       grafanaUrl:
         required: true
         type: string
-        default: "link.url"
 jobs:
   datadog-service-deinition:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
         uses: actions/checkout@v3
-        # with:
-        #   repository: bruno561/opentelemetry-demo
-        #   ref: 'dev'
       - name: Service Definition
         uses: arcxp/datadog-service-catalog-metadata-provider@v1.0.4
         with:
@@ -53,10 +45,6 @@ jobs:
           team: ${{ inputs.squadName }}
           email: ${{ inputs.emailName }}
           slack-support-channel: ${{ inputs.slackChannelName }}
-          # contacts: |
-          #   - name: ${{ inputs.contactName }}
-          #     type: ${{ inputs.contactType }}
-          #     value: ${{ inputs.contactValue }}
           docs: |
             - name: Documentation
               url: ${{ inputs.docUrl }}
@@ -70,6 +58,6 @@ jobs:
               url: ${{ github.server_url }}/${{ github.repository }}
               provider: GitHub
           tags: |
-            - "service-catalog:true"
+            - "created-by:github"
             - "${{ inputs.tagName1 }}"
             - "${{ inputs.tagName2 }}"
