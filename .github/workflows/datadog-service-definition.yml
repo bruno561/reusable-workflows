@@ -21,9 +21,11 @@ on:
       tagName1:
         required: false
         type: string
+        default: "key:value"
       tagName2:
         required: false
         type: string
+        default: "key:value"
       docUrl:
         required: true
         type: string
