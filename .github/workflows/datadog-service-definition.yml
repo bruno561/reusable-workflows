@@ -70,6 +70,6 @@ jobs:
               url: ${{ github.server_url }}/${{ github.repository }}
               provider: GitHub
           tags: |
-            "service-catalog:true"
-            "${{ inputs.tagName1 }}"
-            "${{ inputs.tagName2 }}"
+            - "service-catalog:true"
+            - "${{ inputs.tagName1 }}"
+            - "${{ inputs.tagName2 }}"
