@@ -10,8 +10,6 @@ jobs:
   delete:
     runs-on: ubuntu-latest
     steps:
-      - name: Get code
-        uses: actions/checkout@v3
       - name: Delete Service Definition
         env:
           DD_API_KEY: ${{ secrets.DD_API_KEY }}
@@ -20,5 +18,5 @@ jobs:
           # Curl command
           curl -X DELETE "https://us5.datadoghq.com/api/v2/services/definitions/${{ inputs.serviceName }}" \
           -H "Accept: application/json" \
-          -H "DD-API-KEY: ${{ env.DD_API_KEY }}" \
-          -H "DD-APPLICATION-KEY: ${{ env.DD_APPLICATION_KEY }}"
+          -H "DD-API-KEY: $DD_API_KEY" \
+          -H "DD-APPLICATION-KEY: $DD_APPLICATION_KEY"
