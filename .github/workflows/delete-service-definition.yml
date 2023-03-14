@@ -13,9 +13,12 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Delete Service Definition
+        env:
+          DD_API_KEY: ${{ secrets.DD_API_KEY }}
+          DD_APPLICATION_KEY: ${{ secrets.DD_APPLICATION_KEY }}
         run: |
           # Curl command
           curl -X DELETE "https://us5.datadoghq.com/api/v2/services/definitions/${{ inputs.serviceName }}" \
           -H "Accept: application/json" \
-          -H "DD-API-KEY: ${{ secrets.DD_API_KEY }}" \
-          -H "DD-APPLICATION-KEY: ${{ secrets.DD_APPLICATION_KEY }}"
+          -H "DD-API-KEY: ${{ env.DD_API_KEY }}" \
+          -H "DD-APPLICATION-KEY: ${{ env.DD_APPLICATION_KEY }}"
